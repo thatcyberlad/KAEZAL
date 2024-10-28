@@ -86,6 +86,7 @@ This toolkit is strictly for ethical hacking and cybersecurity research. It help
     Train in a controlled and secure environment
 
 Legal Notice: Always obtain explicit permission before conducting tests. Unauthorized use may lead to legal consequences.
+
 Installation and Setup
 
     Requirements
@@ -95,39 +96,28 @@ Installation and Setup
         Ngrok/Cloudflared/LocalXpose
         PHP
         Linux environment (recommended)
+    
+Installation Steps
 
-    Installation Steps
         Install Python and necessary libraries:
-
-        bash
-
-sudo apt-get install python3 python3-pip
-pip install flask
+        sudo apt-get install python3 python3-pip
+        pip install flask
 
 Set up tunneling tools:
 
     Ngrok: Download Ngrok
     Cloudflared: Install via terminal using:
-
-    bash
-
-        sudo apt install cloudflared
+    bash sudo apt install cloudflared
 
 Running the Application
 
     Clone the repository:
-
-    bash
-
-git clone <repository-url>
+    git clone <repository-url>
 
 Launch the GUI:
 
-bash
-
-        python3 KAEZAL.py
-
-        Choose the tool from the GUI and follow on-screen instructions.
+    python3 KAEZAL.py
+    Choose the tool from the GUI and follow on-screen instructions.
 
 User Guide
 Launching the Tools
