@@ -1,135 +1,138 @@
 Overview![Screenshot 2024-10-28 140931](https://github.com/user-attachments/assets/4199ded4-c188-4ba4-92b6-374cc3fba1ca)
 
-KAEZAL (Social Engineering Toolkit) Documentation
+KAEZAL: A Social Engineering Toolkit
 
-KAEZAL is a Python-based GUI application designed for cybersecurity research and ethical hacking. It provides five powerful tools aimed at:
+KAEZAL is a Python-based GUI application developed for cybersecurity research and ethical hacking. Designed for educational and ethical penetration testing, KAEZAL offers six powerful tools that allow users to:
 
-    Simulating phishing attacks
-    Testing security vulnerabilities
-    Training professionals in penetration testing
+    Simulate phishing attacks
+    Test security vulnerabilities
+    Train professionals in penetration testing techniques
 
-The toolkit leverages Python libraries like Flask and Tkinter for a seamless user interface and integrates technologies such as Ngrok, Cloudflared, Servio, LocalXpose, PHP, and Linux to create a robust and scalable solution.
+The toolkit integrates popular libraries like Flask and Tkinter for a seamless user experience and uses technologies such as Ngrok, Cloudflared, Servio, LocalXpose, PHP, and Linux, creating a robust and scalable security solution.
 Tools and Features
 1. Camphisher
 
-Camphisher captures webcam shots from a target by using phishing techniques to gain webcam access. Here’s how it works:
+Camphisher is a tool for capturing webcam images from targets using phishing tactics.
 
-    Objective: Capture snapshots through a phishing page.
+    Objective: Capture webcam snapshots through a phishing page.
     Process:
-        A phishing page prompts the target for webcam access.
-        Upon approval, the snapshots are captured and transmitted back to the researcher.
+        Sends a phishing page prompting the target for webcam access.
+        Captures and transmits images back to the researcher upon approval.
     Technologies Used: Flask for backend communication, Python libraries for data handling.
 
 2. Phisher
 
-Phisher is the primary tool for credential harvesting through phishing pages. Key details include:
+Phisher focuses on credential harvesting via phishing pages.
 
-    Objective: Capture sensitive credentials like usernames and passwords.
+    Objective: Capture sensitive information like usernames and passwords.
     Process:
-        Realistic-looking phishing pages are hosted locally.
-        Targets are lured into entering credentials.
-        Captured data is securely stored for analysis.
+        Hosts realistic-looking phishing pages locally.
+        Collects entered credentials securely for analysis.
     Technologies Used: Flask for hosting, Ngrok/Cloudflared for web exposure.
 
 3. FindUser
 
-FindUser identifies a target's geographical location using captured IP addresses. Here's a breakdown:
+FindUser identifies a target's geographical location based on IP address.
 
-    Objective: Determine the target’s exact location.
+    Objective: Pinpoint the target’s location using IP.
     Process:
-        IP addresses are captured through interaction with phishing pages.
-        Python libraries track location and present the details to the researcher.
-    Technologies Used: PHP for backend processing, Python for IP tracking.
+        Collects IP addresses through phishing page interactions.
+        Tracks location using Python libraries, presenting details to the researcher.
+    Technologies Used: PHP for backend, Python for IP tracking.
 
 4. QR Code Attack
 
-QR Code Attack uses QR codes for a targeted phishing approach. Details include:
+QR Code Attack targets mobile devices by directing users to phishing pages via QR codes.
 
-    Objective: Create QR codes linking to phishing pages for mobile devices.
+    Objective: Generate phishing QR codes for mobile phishing.
     Process:
-        QR codes are generated linking to pre-configured phishing pages.
-        Targets scan the code and are redirected to the phishing site.
+        Creates QR codes linking to configured phishing pages.
+        Redirects scanned users to phishing sites.
     Technologies Used: Python libraries for QR code generation, Flask for backend.
 
 5. URL Masking Tool
 
-The URL Masking Tool cloaks phishing page URLs to enhance credibility. Key aspects are:
+URL Masking Tool cloaks phishing links to increase trustworthiness.
 
-    Objective: Make phishing links look more trustworthy.
+    Objective: Make phishing URLs look more credible.
     Process:
-        Original phishing URLs are masked.
-        The tool presents a convincing URL, increasing the likelihood of interaction.
+        Masks original URLs to appear legitimate.
     Technologies Used: Flask for URL generation, LocalXpose/Servio for web exposure.
 
+6. Backdoor Injection Tool
+
+Backdoor Injection Tool embeds remote access trojans into common file formats (JPG, PDF, DOCX).
+
+    Objective: Embed backdoors into popular file formats for remote access.
+    Technologies Used: Python for backdoor injection and manipulation.
+
 Technologies and Development Tools
+
 Core Technologies
 
-    Python: The primary programming language.
-    Flask: Backend server management for handling web pages.
-    Tkinter: GUI creation and user interface management.
+    Python: Primary programming language.
+    PHP: Backend server management.
 
 Networking Tools
 
-    Ngrok: Tunneling tool for exposing local servers to the web.
-    Cloudflared: Alternative tunneling service for secure connections.
-    Servio/LocalXpose: Local web hosting tools for remote testing.
+    Ngrok: Exposes local servers to the web.
+    Cloudflared: Alternative tunneling for secure connections.
+    Servio/LocalXpose: Local web hosting for remote access.
 
 Backend Tools
 
-    PHP: Used for data processing and handling.
-    Linux: Preferred OS for stability and security during deployment.
+    PHP: Data processing and handling.
+    Linux: Recommended OS for stability and security.
 
 Ethical Use and Security
 
-This toolkit is strictly for ethical hacking and cybersecurity research. It helps professionals:
+This toolkit is intended strictly for ethical hacking and cybersecurity research. KAEZAL supports professionals in understanding vulnerabilities in a safe and controlled environment.
 
-    Understand potential vulnerabilities
-    Train in a controlled and secure environment
-
-Legal Notice: Always obtain explicit permission before conducting tests. Unauthorized use may lead to legal consequences.
-
+Legal Notice: Obtain explicit permission before conducting tests. Unauthorized use is illegal and may lead to severe consequences.
 Installation and Setup
 
-    Requirements
-        Python 3.x
-        Flask library
-        Tkinter (built-in with Python)
-        Ngrok/Cloudflared/LocalXpose
-        PHP
-        Linux environment (recommended)
-    
+Requirements
+
+    Python 3.x
+    Flask library
+    Tkinter (built-in with Python)
+    Ngrok, Cloudflared, LocalXpose
+    PHP
+    Linux environment (recommended)
+
 Installation Steps
 
-        Install Python and necessary libraries:
-        sudo apt-get install python3 python3-pip
-        pip install flask
+    Install Python and necessary libraries:
+
+sudo apt-get install python3 python3-pip
+pip install flask
 
 Set up tunneling tools:
 
-    Ngrok: Download Ngrok
-    Cloudflared: Install via terminal using:
-    bash sudo apt install cloudflared
+    Ngrok: Download and install Ngrok
+    Cloudflared: Install via terminal:
 
-Running the Application
+    sudo apt install cloudflared
 
-    Clone the repository:
-    git clone <repository-url>
+Clone the repository:
+
+git clone <repository-url>
 
 Launch the GUI:
 
     python3 KAEZAL.py
-    Choose the tool from the GUI and follow on-screen instructions.
 
 User Guide
-Launching the Tools
 
-    Open the GUI.
-    Select the desired tool from the menu:
+Launching Tools
+
+    Select the desired tool from the GUI:
         Camphisher: Initiates webcam capture.
         Phisher: Starts a phishing page to capture credentials.
-        FindUser: Tracks location using the captured IP.
-        QR Code Attack: Generates a phishing QR code.
-        URL Masking Tool: Masks a URL for phishing.
+        FindUser: Tracks location using captured IP.
+        QR Code Attack: Generates phishing QR codes.
+        URL Masking Tool: Masks phishing URLs for credibility.
+        Backdoor Injection Tool: Embeds backdoors into files.
 
 Using the Tools
 
@@ -138,3 +141,4 @@ Using the Tools
     FindUser: View location results in the interface.
     QR Code Attack: Distribute the QR code to the target.
     URL Masking Tool: Generate and test the masked URL.
+    Backdoor Injection Tool: Embed backdoor in popular file formats.
