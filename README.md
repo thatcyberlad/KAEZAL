@@ -2,13 +2,13 @@
 
 KAEZAL: A Social Engineering Toolkit
 
-KAEZAL is a Python-based GUI application developed for cybersecurity research and ethical hacking. Designed for educational and ethical penetration testing, KAEZAL offers six powerful tools that allow users to:
+KAEZAL is a Python-based Linux toolkit developed for cybersecurity research and ethical hacking. Designed for educational and ethical penetration testing, KAEZAL offers six powerful tools that allow users to:
 
     Simulate phishing attacks
     Test security vulnerabilities
     Train professionals in penetration testing techniques
 
-The toolkit integrates popular libraries like Flask and Tkinter for a seamless user experience and uses technologies such as Ngrok, Cloudflared, Servio, LocalXpose, PHP, and Linux, creating a robust and scalable security solution.
+The toolkit integrates popular technologies such as Ngrok, Cloudflared, Servio, LocalXpose, PHP, and Linux, creating a robust and scalable security solution.
 Tools and Features
 1. Camphisher
 
