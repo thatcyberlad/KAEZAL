@@ -12,7 +12,7 @@ The toolkit integrates popular technologies such as Ngrok, Cloudflared, Servio, 
 Tools and Features
 1. Camphisher
 
-Camphisher is a tool for capturing webcam images from targets using phishing tactics.
+Camphisher captures webcam images from targets using phishing tactics.
 
     Objective: Capture webcam snapshots through a phishing page.
     Process:
@@ -64,7 +64,7 @@ URL Masking Tool cloaks phishing links to increase trustworthiness.
 Backdoor Injection Tool embeds remote access trojans into common file formats (JPG, PDF, DOCX).
 
     Objective: Embed backdoors into popular file formats for remote access.
-    Technologies Used: Python for backdoor injection and manipulation.
+    Technologies Used: Python and bash for backdoor injection and manipulation.
 
 Technologies and Development Tools
 
@@ -123,7 +123,6 @@ Launch the GUI:
     python3 KAEZAL.py
 
 User Guide
-
 Launching Tools
 
     Select the desired tool from the GUI:
