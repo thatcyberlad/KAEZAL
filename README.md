@@ -15,9 +15,7 @@ Tools and Features
 Camphisher captures webcam images from targets using phishing tactics.
 
     Objective: Capture webcam snapshots through a phishing page.
-    Process:
-        Sends a phishing page prompting the target for webcam access.
-        Captures and transmits images back to the researcher upon approval.
+    Process: Generates a phishing page prompting the target for webcam access. Captures and transmits images back to the researcher upon approval.
     Technologies Used: Flask for backend communication, Python libraries for data handling.
 
 2. Phisher
@@ -25,9 +23,7 @@ Camphisher captures webcam images from targets using phishing tactics.
 Phisher focuses on credential harvesting via phishing pages.
 
     Objective: Capture sensitive information like usernames and passwords.
-    Process:
-        Hosts realistic-looking phishing pages locally.
-        Collects entered credentials securely for analysis.
+    Process: Hosts realistic-looking phishing pages locally. Collects entered credentials securely for analysis.
     Technologies Used: Flask for hosting, Ngrok/Cloudflared for web exposure.
 
 3. FindUser
@@ -35,9 +31,7 @@ Phisher focuses on credential harvesting via phishing pages.
 FindUser identifies a target's geographical location based on IP address.
 
     Objective: Pinpoint the target’s location using IP.
-    Process:
-        Collects IP addresses through phishing page interactions.
-        Tracks location using Python libraries, presenting details to the researcher.
+    Process: Tracks location using Python libraries, presenting details to the researcher.
     Technologies Used: PHP for backend, Python for IP tracking.
 
 4. QR Code Attack
@@ -45,9 +39,7 @@ FindUser identifies a target's geographical location based on IP address.
 QR Code Attack targets mobile devices by directing users to phishing pages via QR codes.
 
     Objective: Generate phishing QR codes for mobile phishing.
-    Process:
-        Creates QR codes linking to configured phishing pages.
-        Redirects scanned users to phishing sites.
+    Process: Creates QR codes linking to configured phishing pages. Redirects scanned users to phishing sites.
     Technologies Used: Python libraries for QR code generation, Flask for backend.
 
 5. URL Masking Tool
@@ -55,8 +47,7 @@ QR Code Attack targets mobile devices by directing users to phishing pages via Q
 URL Masking Tool cloaks phishing links to increase trustworthiness.
 
     Objective: Make phishing URLs look more credible.
-    Process:
-        Masks original URLs to appear legitimate.
+    Process: Masks original URLs to appear legitimate.
     Technologies Used: Flask for URL generation, LocalXpose/Servio for web exposure.
 
 6. Backdoor Injection Tool
@@ -102,10 +93,10 @@ Requirements
 
 Installation Steps
 
-    Install Python and necessary libraries:
+Install Python and necessary libraries:
 
-sudo apt-get install python3 python3-pip
-pip install flask
+    sudo apt-get install python3 python3-pip
+    pip install flask
 
 Set up tunneling tools:
 
@@ -116,7 +107,7 @@ Set up tunneling tools:
 
 Clone the repository:
 
-git clone <repository-url>
+    git clone <repository-url>
 
 Launch the GUI:
 
@@ -126,12 +117,12 @@ User Guide
 Launching Tools
 
     Select the desired tool from the GUI:
-        Camphisher: Initiates webcam capture.
-        Phisher: Starts a phishing page to capture credentials.
-        FindUser: Tracks location using captured IP.
-        QR Code Attack: Generates phishing QR codes.
-        URL Masking Tool: Masks phishing URLs for credibility.
-        Backdoor Injection Tool: Embeds backdoors into files.
+    Camphisher: Initiates webcam capture.
+    Phisher: Starts a phishing page to capture credentials.
+    FindUser: Tracks location using captured IP.
+    QR Code Attack: Generates phishing QR codes.
+    URL Masking Tool: Masks phishing URLs for credibility.
+    Backdoor Injection Tool: Embeds backdoors into files.
 
 Using the Tools
 
